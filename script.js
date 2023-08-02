@@ -126,16 +126,16 @@ submitBtn.addEventListener('click', () => {
         currentQuiz++;
         if (currentQuiz < quizData.length) {
             loadQuiz();
-            //ADDED STUFF:
-            scores.push(score)
-            window.location.href="/results";
         } else {
             hideElement(quizContainer);
             const resultContainer = document.createElement('div');
             resultContainer.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly</h2>
             <button onclick="location.reload()">Next Section</button>`;
             document.body.appendChild(resultContainer);
+            //ADDED STUFF:
+            scores.push(score);
         }
     }
 });
+
 
